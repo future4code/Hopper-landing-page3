@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+.c-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid #1F1F24;
+    background-color: #1F1F24;
+    z-index: 2;
+}
+
+.c-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    height: 10vh;
+}
+
+.c-navbar {
+    align-items: center;
+    justify-items: center;
+}
+
+.c-navbar p img {
+    width: 15vw;
+}
+
+
+/* hamburger style */
+
+.c-hamburger {
+    display: none;
+}
+
+.c-bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #D2C2B0;
+}
+
+
+/* styles for the other elements*/
+
+.c-nav-menu {
+    display: grid;
+    width: 50vw;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    background-color: #1F1F24;
+}
+
+.c-nav-item {
+    text-align: center;
+}
+
+.c-nav-link {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #D2C2B0;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 150ms;
+}
+
+.c-nav-link:hover {
+    font-weight: bolder;
+    font-size: 1.3em;
+}
+
+.c-nav-logo img {
+    width: 30%
+}
+
+
+/* responsiveness */
+
+@media only screen and (max-width: 700px) {
+    .c-header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+    }
+    .c-nav-menu {
+        position: absolute;
+        left: -100%;
+        top: 9vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+    }
+    .c-nav-menu.active {
+        left: 0;
+    }
+    .c-nav-item {
+        height: 15vh;
+        padding-top: 6vh;
+        justify-items: center;
+    }
+    .c-hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    .c-hamburger.active .c-bar:nth-child(2) {
+        opacity: 3;
+    }
+    .c-hamburger.active .c-bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .c-hamburger.active .c-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
